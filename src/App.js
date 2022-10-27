@@ -1,8 +1,15 @@
-import React from 'react';
+import React,{useState} from 'react';
 
 import './index.css';
+import { useState } from 'react';
 
 function App() {
+  const [images, setImages] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [term, setTerm] = useState('');
+
+
+
   return (
     <div >
      <div className="w-full max-w-xs overflow-hidden bg-white rounded-lg shadow-lg dark:bg-cyan-50">
