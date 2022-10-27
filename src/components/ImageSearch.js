@@ -1,13 +1,20 @@
 import React from 'react'
 import { useState } from 'react';
 
-const ImageSearch = () => {
+const ImageSearch = ({searchText}) => {
 
     const[text, setText] = useState("");
+
+    const onSubmit = (e) =>{
+        e.preventDefault();
+        searchText(text);
+       
+
+    }
   return (
    
             <div className="flex w-full justify-center m-[50px] items-center ">
-                <form className='w-full max-w-sm'>
+                <form onSubmit={onSubmit} className='w-full max-w-sm'>
                 <div className="flex border border-purple-200 rounded">
                     <input
                     onChange={e =>setText(e.target.value)}
